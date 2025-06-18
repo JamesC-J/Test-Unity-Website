@@ -1,127 +1,18 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Taster Day - 2D Platformer Game</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <title>GrapesJS Studio Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <meta name="generator" content="GrapesJS Studio">
+  <link rel="stylesheet" href="./style.css">
   </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Taster Day - 2D Platformer Game</div>
-      </div>
-    </div>
-    <script>
-      var canvas = document.querySelector("#unity-canvas");
-
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        var warningBanner = document.querySelector("#unity-warning");
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
-
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Test Build.loader.js";
-      var config = {
-        arguments: [],
-        dataUrl: buildUrl + "/Test Build.data.unityweb",
-        frameworkUrl: buildUrl + "/Test Build.framework.js.unityweb",
-        codeUrl: buildUrl + "/Test Build.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Taster Day - 2D Platformer Game",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-      };
-
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      document.querySelector("#unity-loading-bar").style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
-      document.body.appendChild(script);
-
-    </script>
-  </body>
+  <body class="gjs-t-body" id="i76k"><div class="navbar" id="i68e"><div data-gjs="navbar" class="navbar-container" id="ihyu"><a href="/" id="idx4" title="JamesCJ" class="navbar-brand"></a><div id="imam7" class="navbar-burger"><div class="navbar-burger-line"></div><div class="navbar-burger-line"></div><div class="navbar-burger-line"></div></div><div data-gjs="navbar-items" class="navbar-items-c"><nav class="navbar-menu"><a id="i3hza" href="index.html" class="navbar-menu-link">Home</a><a id="ivdxn" href="game.html" class="navbar-menu-link">Game
+</a><a class="navbar-menu-link" id="iiobr"></a></nav></div></div></div><div data-type-role="flex-row" class="gjs-plg-flex-row" id="ihhtn"><div data-type-role="flex-column" class="gjs-plg-flex-column" id="i3aeu"><img id="ijv7o" src="https://picsum.photos/seed/demo-2/500/300"/></div><div data-type-role="flex-column" class="gjs-plg-flex-column" id="is7d9"><h1 id="id8hk">GrapesJS Website Test</h1><div id="ia864"><div id="ieij7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, odio a luctus mattis, nibh ligula varius ex, quis tempus turpis ex sed felis. Praesent id arcu vel nibh sollicitudin lacinia. Duis lacinia erat odio. Vivamus nec orci feugiat, consequat ex vel, tempor ligula. Sed scelerisque vulputate nisi vitae mollis. Donec facilisis malesuada ex ac condimentum. Donec porta tincidunt lectus, non laoreet lectus scelerisque eget.</div></div></div></div><div class="gjs-divider" id="ipx4e"></div><div data-type-role="flex-row" class="gjs-plg-flex-row" id="ione4"><div data-type-role="flex-column" class="gjs-plg-flex-column" id="isvhu"><img id="ijv7o-2" src="https://picsum.photos/seed/demo-2/500/300"/></div><div data-type-role="flex-column" class="gjs-plg-flex-column" id="ib497"><h1 id="inajt">Lorem Ipsum</h1><div id="i2tyd"><div id="ifoz1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, odio a luctus mattis, nibh ligula varius ex, quis tempus turpis ex sed felis. Praesent id arcu vel nibh sollicitudin lacinia. Duis lacinia erat odio. Vivamus nec orci feugiat, consequat ex vel, tempor ligula. Sed scelerisque vulputate nisi vitae mollis. Donec facilisis malesuada ex ac condimentum. Donec porta tincidunt lectus, non laoreet lectus scelerisque eget.</div></div></div></div><div data-type-role="flex-row" class="gjs-plg-flex-row" id="if2nb"><div data-type-role="flex-column" class="gjs-plg-flex-column" id="iaek3"><img id="ijv7o-3" src="https://picsum.photos/seed/demo-2/500/300"/></div><div data-type-role="flex-column" class="gjs-plg-flex-column" id="ij66u"><h1 id="is09m">Lorem Ipsum</h1><div id="i7e63"><div id="isbbh">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, odio a luctus mattis, nibh ligula varius ex, quis tempus turpis ex sed felis. Praesent id arcu vel nibh sollicitudin lacinia. Duis lacinia erat odio. Vivamus nec orci feugiat, consequat ex vel, tempor ligula. Sed scelerisque vulputate nisi vitae mollis. Donec facilisis malesuada ex ac condimentum. Donec porta tincidunt lectus, non laoreet lectus scelerisque eget.</div></div></div></div><div data-type-role="flex-row" class="gjs-plg-flex-row" id="i0ih4"><div data-type-role="flex-column" class="gjs-plg-flex-column" id="izaga"><img id="ijv7o-4" src="https://picsum.photos/seed/demo-2/500/300"/></div><div data-type-role="flex-column" class="gjs-plg-flex-column" id="i8kpz"><h1 id="ig0ly">Lorem Ipsum</h1><div id="ikgzp"><div id="iawij">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, odio a luctus mattis, nibh ligula varius ex, quis tempus turpis ex sed felis. Praesent id arcu vel nibh sollicitudin lacinia. Duis lacinia erat odio. Vivamus nec orci feugiat, consequat ex vel, tempor ligula. Sed scelerisque vulputate nisi vitae mollis. Donec facilisis malesuada ex ac condimentum. Donec porta tincidunt lectus, non laoreet lectus scelerisque eget.</div></div></div></div><div data-type-role="flex-row" class="gjs-plg-flex-row" id="iisp6"><div data-type-role="flex-column" class="gjs-plg-flex-column" id="iwh17"><img id="ijv7o-5" src="https://picsum.photos/seed/demo-2/500/300"/></div><div data-type-role="flex-column" class="gjs-plg-flex-column" id="izqdc"><h1 id="i72tv">Lorem Ipsum</h1><div id="ijuz5"><div id="ik9xw">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, odio a luctus mattis, nibh ligula varius ex, quis tempus turpis ex sed felis. Praesent id arcu vel nibh sollicitudin lacinia. Duis lacinia erat odio. Vivamus nec orci feugiat, consequat ex vel, tempor ligula. Sed scelerisque vulputate nisi vitae mollis. Donec facilisis malesuada ex ac condimentum. Donec porta tincidunt lectus, non laoreet lectus scelerisque eget.</div></div></div></div><script>var items = document.querySelectorAll('#imam7');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+var n,t=this,e='gjs-collapse',a='max-height',o=0,i=function(){var n=document.createElement('void'),t={transition:'transitionend',OTransition:'oTransitionEnd',MozTransition:'transitionend',WebkitTransition:'webkitTransitionEnd'};for(var e in t)if(void 0!==n.style[e])return t[e]}(),r=function(n){o=1;var t=function(n){var t=window.getComputedStyle(n),e=t.display,o=parseInt(t[a]);if('none'!==e&&0!==o)return n.offsetHeight;n.style.height='auto',n.style.display='block',n.style.position='absolute',n.style.visibility='hidden';var i=n.offsetHeight;return n.style.height='',n.style.display='',n.style.position='',n.style.visibility='',i}(n),e=n.style;e.display='block',e.transition="".concat(a," 0.25s ease-in-out"),e.overflowY='hidden',''==e[a]&&(e[a]=0),0==parseInt(e[a])?(e[a]='0',setTimeout((function(){e[a]=t+'px'}),10)):e[a]='0'};e in t||t.addEventListener('click',(function(e){if(e.preventDefault(),!o){var l=t.closest("[data-gjs=navbar]"),c=null==l?void 0:l.querySelector("[data-gjs=navbar-items]");c&&r(c),n||(null==c||c.addEventListener(i,(function(){o=0;var n=c.style;0==parseInt(n[a])&&(n.display='',n[a]='')})),n=1)}})),t[e]=1
+}.bind(items[i]))();
+          }</script></body>
 </html>
